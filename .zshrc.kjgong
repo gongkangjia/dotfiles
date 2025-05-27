@@ -1,0 +1,29 @@
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin::$PATH
+
+source ~/.local/pyenv/.venv/bin/activate
+
+#Path to your oh-my-zsh installation.
+export ZSH="/Users/kjgong/.oh-my-zsh"
+
+ZSH_THEME="kjgong"
+plugins=(git z zsh-autosuggestions zsh-syntax-highlighting rand-quote)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+export LANG=en_US.UTF-8
+
+# Load dotfiles:
+for file in ~/.dotfiles/.{uvrc,aliases}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+unset file
+
+export JAVA_HOME=`/usr/libexec/java_home -v 11` 
+export PATH=$JAVA_HOME/bin:$PATH
+
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
