@@ -5,5 +5,6 @@ REMOTE_HOME="~"
 
 for SERVER in "${SERVERS[@]}"; do
     echo "==> Syncing to $SERVER"
-    rsync -avP "$LOCAL/.dotfiles/common" "$SERVER:$REMOTE_HOME/.dotfiles"
+    rsync -avP --exclude ".git/" "$LOCAL/.dotfiles" "$SERVER:$REMOTE_HOME/.dotfiles"
 done
+s
